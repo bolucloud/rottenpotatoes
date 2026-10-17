@@ -52,3 +52,11 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
+
+group :production do
+  gem 'pg' # for Heroku deployment
+end
+
+group :development, :test do
+  gem 'sqlite3', ">= 2.1"
+end
