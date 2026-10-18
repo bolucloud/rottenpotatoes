@@ -7,10 +7,24 @@
 <table id="movies">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Description</th>
-      <th>Release Date</th>
+      <th>
+        Title
+        <%= link_to "asc", movies_path(sort: "title", direction: "asc") %>
+        <%= link_to "desc", movies_path(sort: "title", direction: "desc") %>
+      </th>
+      <th>
+        Rating
+        <%= link_to "asc", movies_path(sort: "rating", direction: "asc") %>
+        <%= link_to "desc", movies_path(sort: "rating", direction: "desc") %>
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Release Date
+        <%= link_to "asc", movies_path(sort: "release_date", direction: "asc") %>
+        <%= link_to "desc", movies_path(sort: "release_date", direction: "desc") %>
+      </th>
     </tr>
   </thead>
   <tbody>

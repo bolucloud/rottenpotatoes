@@ -3,7 +3,13 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    #@movies = Movie.all
+    columns = ["title", "rating", "description", "release_date"]
+    column = columns.include?(params[:sort]) ? params[:sort] : "title"
+    directions = ["asc", "desc"]
+    direction = params[:direction] && directions.include?(params[:direction]) ? params[:direction] : "asc"
+
+    @movies = Movie.order(column => direction)
   end
 
   # GET /movies/1 or /movies/1.json
