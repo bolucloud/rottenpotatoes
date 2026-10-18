@@ -26,21 +26,30 @@
         <%= link_to "asc", movies_path(sort: "release_date", direction: "asc") %>
         <%= link_to "desc", movies_path(sort: "release_date", direction: "desc") %>
       </th>
+      <th>
+        Actions
+      </th>
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td class="<%= sort_table("title") %>"><%= movie.title %></td>
+        <td class="<%= sort_table("title") %>">
+          <%= link_to movie.title, movie_path(movie)%>
+        </td>
         <td class="<%= sort_table("rating") %>"><%= movie.rating %></td>
         <td><%= movie.description %></td>
         <td class="<%= sort_table("release_date") %>"><%= movie.release_date&.strftime("%Y-%m-%d") %></td>
+        <td>
+          <%= link_to "Edit", edit_movie_path(movie) %>
+          <%= link_to "Delete", movie_path(movie), method: :delete, confirm: "Are you sure you want to delete #{movie.title}?" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4" align="center">
+      <td colspan="5" align="center">
         <%= link_to "New movie", new_movie_path %>
       </td>
     </tr>
