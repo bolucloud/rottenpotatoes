@@ -14,3 +14,31 @@
 </div>
 
 <%= link_to "New movie", new_movie_path %>
+
+<table id="movies">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th>Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.description %></td>
+        <td><%= movie.release_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">
+        <%= link_to "New movie", new_movie_path %>
+      </td>
+    </tr>
+  </tfoot>
+</table>
