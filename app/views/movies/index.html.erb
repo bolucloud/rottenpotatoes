@@ -9,12 +9,12 @@
   <thead>
     <tr>
       <th class="<%= sort_table("title") %>">
-        Title
+        <%= sort_symbol("title") %> Title
         <%= link_to "asc", movies_path(sort: "title", direction: "asc") %>
         <%= link_to "desc", movies_path(sort: "title", direction: "desc") %>
       </th>
       <th class="<%= sort_table("rating") %>">
-        Rating
+        <%= sort_symbol("rating") %> Rating
         <%= link_to "asc", movies_path(sort: "rating", direction: "asc") %>
         <%= link_to "desc", movies_path(sort: "rating", direction: "desc") %>
       </th>
@@ -22,7 +22,7 @@
         Description
       </th>
       <th class="<%= sort_table("release_date") %>">
-        Release Date
+        <%= sort_symbol("release_date") %> Release Date 
         <%= link_to "asc", movies_path(sort: "release_date", direction: "asc") %>
         <%= link_to "desc", movies_path(sort: "release_date", direction: "desc") %>
       </th>

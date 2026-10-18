@@ -8,4 +8,13 @@ module MoviesHelper
             "sorted-#{direction}"
         end
     end
+
+
+    def sort_symbol(column)
+        if sort_table(column) == "sorted-asc"
+            "▲"
+        elsif sort_table(column) == "sorted-desc"
+            "▼"
+        end
+    end
 end
