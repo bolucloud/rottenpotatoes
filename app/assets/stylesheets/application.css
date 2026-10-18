@@ -8,3 +8,23 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ 
+#movies .sorted-asc {
+    background-color: #ffc0cb
+}
+
+#movies .sorted-desc {
+    background-color: #90ee90
+}
+
+#movies {
+    border-collapse: collapse;
+}
+
+#movies, #movies th, #movies td {
+    border: 1px solid darkgray;
+}
+
+#movies th, #movies td {
+    padding: 8px;
+}
