@@ -22,5 +22,9 @@ more_movies = [
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+    existing_movie = Movie.find_by(title: movie[:title], rating: movie[:rating], release_date: movie[:release_date]) # checks to see if the movie exists
+
+    if existing_movie.nil? # if not, it creates the movie. This makes things idempotent and doesnt duplicate entries
+        Movie.create!(movie)
+    end
 end
