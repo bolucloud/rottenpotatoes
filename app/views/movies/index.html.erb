@@ -19,7 +19,7 @@
         <td><%= movie.title %></td>
         <td><%= movie.rating %></td>
         <td><%= movie.description %></td>
-        <td><%= movie.release_date %></td>
+        <td><%= movie.release_date&.strftime("%Y-%m-%d") %></td>
       </tr>
     <% end %>
   </tbody>
