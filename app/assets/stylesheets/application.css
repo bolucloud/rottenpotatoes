@@ -8,13 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- 
-#movies .sorted-asc {
-    background-color: #ffc0cb
-}
 
-#movies .sorted-desc {
-    background-color: #90ee90
+#movies th {
+    background-color: #bda74f;
 }
 
 #movies {
@@ -22,9 +18,23 @@
 }
 
 #movies, #movies th, #movies td {
-    border: 1px solid darkgray;
+    border: 1px solid black;
 }
 
 #movies th, #movies td {
     padding: 8px;
+}
+
+#movies tfoot {
+    font-weight: bold;
+    background-color: #82d6f3;
+    
+}
+
+#movies .sorted-asc {
+    background-color: #ffc0cb
+}
+
+#movies .sorted-desc {
+    background-color: #90ee90
 }
